@@ -14,8 +14,10 @@ public class SfgDiApplication {
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(SfgDiApplication.class, args);
 
+		System.out.println("--------Primary Injector---------");
 		MyController myController = (MyController) context.getBean("myController");
 		System.out.println(myController.sayHello());
+		System.out.println(myController.getGreeting());
 
 		System.out.println("--------Property Injector---------");
 		System.out.println("-------This is the most commonly used DI, but not recommended for unit testing -------");
