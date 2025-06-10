@@ -1,9 +1,6 @@
 package guru.springframework.sfg_di;
 
-import guru.springframework.sfg_di.controllers.ConstructorInjectorController;
-import guru.springframework.sfg_di.controllers.MyController;
-import guru.springframework.sfg_di.controllers.PropertyInjectorController;
-import guru.springframework.sfg_di.controllers.SetterInjectorController;
+import guru.springframework.sfg_di.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -13,6 +10,11 @@ public class SfgDiApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(SfgDiApplication.class, args);
+
+		System.out.println("--------Checking the Functionality of PROFILE---------");
+		I18nController i18nController = (I18nController) context
+				.getBean("i18nController");
+		System.out.println(i18nController.sayHello());
 
 		System.out.println("--------Primary Injector---------");
 		MyController myController = (MyController) context.getBean("myController");
