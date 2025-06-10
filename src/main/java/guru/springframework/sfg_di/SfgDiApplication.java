@@ -18,6 +18,7 @@ public class SfgDiApplication {
 		System.out.println(myController.sayHello());
 
 		System.out.println("--------Property Injector---------");
+		System.out.println("-------This is the most commonly used DI, but not recommended for unit testing -------");
 		PropertyInjectorController propertyInjectorController = (PropertyInjectorController) context
 				.getBean("propertyInjectorController");
 		System.out.println(propertyInjectorController.getGreeting());
@@ -28,7 +29,7 @@ public class SfgDiApplication {
 		System.out.println(setterInjectorController.getGreeting());
 
 		System.out.println("-------Constructor Injector--------");
-		System.out.println("-------This is the most common and High Priority DI-------");
+		System.out.println("-------This is the Most Recommended DI-------");
 		ConstructorInjectorController constructorInjectorController = (ConstructorInjectorController) context
 				.getBean("constructorInjectorController");
 		System.out.println(constructorInjectorController.getGreeting());
